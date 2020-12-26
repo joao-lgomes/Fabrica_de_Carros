@@ -11,11 +11,36 @@ package Menu;
  */
 public class Menu extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Menu
-     */
+    
+    
     public Menu() {
         initComponents();
+        Inserir.setVisible(false);
+        Mostrar.setVisible(false);
+        Alterar.setVisible(false);
+        Excluir.setVisible(false);
+        jPanel1.setVisible(false);
+        jPanel2.setVisible(false);
+        jPanel3.setVisible(false);
+        jPanel4.setVisible(false);
+        jPanel6.setVisible(false);
+        jPanel7.setVisible(false);
+        
+        jCB_Escolhas.removeAllItems();
+        jCB_Escolhas.addItem("-------------------------------------------------");
+        jCB_Escolhas.addItem("1- Inserir");
+        jCB_Escolhas.addItem("2- Mostrar");
+        jCB_Escolhas.addItem("3- Alterar");
+        jCB_Escolhas.addItem("4- Excluir");
+        jCB_Escolhas.addItem("5- Mostrar o carro com maior potência");
+        jCB_Escolhas.addItem("6- Mostrar a média dos anos");
+        jCB_Escolhas.addItem("7- Ordenar por modelo");
+        jCB_Escolhas.addItem("8- Mostrar quantos carros estão no registro");
+        jCB_Escolhas.addItem("9- Carros do “menor ano” agrupados por fabricante");
+        jCB_Escolhas.addItem("10- Mostrar carros com ar-condicionado");
+       
+        
+
     }
 
     /**
@@ -74,7 +99,7 @@ public class Menu extends javax.swing.JFrame {
         ButtonsPan2 = new javax.swing.JPanel();
         Limpar_BT2 = new javax.swing.JButton();
         Inserir_BT2 = new javax.swing.JButton();
-        Inserir1 = new javax.swing.JPanel();
+        AlterarCarro = new javax.swing.JPanel();
         jLb_Topo_menuAlterar2 = new javax.swing.JLabel();
         DadosPan2 = new javax.swing.JPanel();
         ChassiPan1 = new javax.swing.JPanel();
@@ -100,6 +125,15 @@ public class Menu extends javax.swing.JFrame {
         Limpar_BT1 = new javax.swing.JButton();
         Inserir_BT1 = new javax.swing.JButton();
         Excluir = new javax.swing.JPanel();
+        Procurar_Chassi1 = new javax.swing.JPanel();
+        jLb_Topo_menuAlterar1 = new javax.swing.JLabel();
+        Digitar_Chassi_Pan3 = new javax.swing.JPanel();
+        ChassiPan3 = new javax.swing.JPanel();
+        LB_Chassi4 = new javax.swing.JLabel();
+        Chassi_TF4 = new javax.swing.JTextField();
+        ButtonsPan3 = new javax.swing.JPanel();
+        Limpar_BT3 = new javax.swing.JButton();
+        Inserir_BT3 = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -135,11 +169,11 @@ public class Menu extends javax.swing.JFrame {
         Menu_PrincipalLayout.setHorizontalGroup(
             Menu_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLb_Escolha_Opcao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLb_Topo_menu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Menu_PrincipalLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCB_Escolhas, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(216, 216, 216))
-            .addComponent(jLb_Topo_menu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jCB_Escolhas, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(162, 162, 162))
         );
         Menu_PrincipalLayout.setVerticalGroup(
             Menu_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -227,11 +261,11 @@ public class Menu extends javax.swing.JFrame {
         ModeloPan.setLayout(ModeloPanLayout);
         ModeloPanLayout.setHorizontalGroup(
             ModeloPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(LB_Modelo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(LB_Modelo, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
             .addGroup(ModeloPanLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Modelo_TF, javax.swing.GroupLayout.PREFERRED_SIZE, 387, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(Modelo_TF)
+                .addContainerGap())
         );
         ModeloPanLayout.setVerticalGroup(
             ModeloPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -820,17 +854,17 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        javax.swing.GroupLayout Inserir1Layout = new javax.swing.GroupLayout(Inserir1);
-        Inserir1.setLayout(Inserir1Layout);
-        Inserir1Layout.setHorizontalGroup(
-            Inserir1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout AlterarCarroLayout = new javax.swing.GroupLayout(AlterarCarro);
+        AlterarCarro.setLayout(AlterarCarroLayout);
+        AlterarCarroLayout.setHorizontalGroup(
+            AlterarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLb_Topo_menuAlterar2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(DadosPan2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(ButtonsPan1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-        Inserir1Layout.setVerticalGroup(
-            Inserir1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Inserir1Layout.createSequentialGroup()
+        AlterarCarroLayout.setVerticalGroup(
+            AlterarCarroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AlterarCarroLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLb_Topo_menuAlterar2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -840,7 +874,7 @@ public class Menu extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jLayeredPane1.add(Inserir1);
+        jLayeredPane1.add(AlterarCarro);
 
         javax.swing.GroupLayout AlterarLayout = new javax.swing.GroupLayout(Alterar);
         Alterar.setLayout(AlterarLayout);
@@ -855,15 +889,127 @@ public class Menu extends javax.swing.JFrame {
 
         jLayeredPane2.add(Alterar);
 
+        jLb_Topo_menuAlterar1.setFont(new java.awt.Font("Tahoma", 1, 28)); // NOI18N
+        jLb_Topo_menuAlterar1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLb_Topo_menuAlterar1.setText("EXCLUIR");
+        jLb_Topo_menuAlterar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        LB_Chassi4.setFont(new java.awt.Font("Tahoma", 0, 28)); // NOI18N
+        LB_Chassi4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LB_Chassi4.setText("Digite o Chassi que deseja excluir");
+
+        Chassi_TF4.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+
+        javax.swing.GroupLayout ChassiPan3Layout = new javax.swing.GroupLayout(ChassiPan3);
+        ChassiPan3.setLayout(ChassiPan3Layout);
+        ChassiPan3Layout.setHorizontalGroup(
+            ChassiPan3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LB_Chassi4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(ChassiPan3Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(Chassi_TF4, javax.swing.GroupLayout.PREFERRED_SIZE, 743, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        ChassiPan3Layout.setVerticalGroup(
+            ChassiPan3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ChassiPan3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LB_Chassi4)
+                .addGap(18, 18, 18)
+                .addComponent(Chassi_TF4, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+
+        Limpar_BT3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Limpar_BT3.setText("LIMPAR");
+
+        Inserir_BT3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Inserir_BT3.setText("EXCLUIR");
+
+        javax.swing.GroupLayout ButtonsPan3Layout = new javax.swing.GroupLayout(ButtonsPan3);
+        ButtonsPan3.setLayout(ButtonsPan3Layout);
+        ButtonsPan3Layout.setHorizontalGroup(
+            ButtonsPan3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ButtonsPan3Layout.createSequentialGroup()
+                .addComponent(Limpar_BT3, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Inserir_BT3, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        ButtonsPan3Layout.setVerticalGroup(
+            ButtonsPan3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonsPan3Layout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addGroup(ButtonsPan3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Inserir_BT3)
+                    .addComponent(Limpar_BT3))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout Digitar_Chassi_Pan3Layout = new javax.swing.GroupLayout(Digitar_Chassi_Pan3);
+        Digitar_Chassi_Pan3.setLayout(Digitar_Chassi_Pan3Layout);
+        Digitar_Chassi_Pan3Layout.setHorizontalGroup(
+            Digitar_Chassi_Pan3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ChassiPan3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(Digitar_Chassi_Pan3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ButtonsPan3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        Digitar_Chassi_Pan3Layout.setVerticalGroup(
+            Digitar_Chassi_Pan3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Digitar_Chassi_Pan3Layout.createSequentialGroup()
+                .addComponent(ChassiPan3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(76, 76, 76)
+                .addComponent(ButtonsPan3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 193, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout Procurar_Chassi1Layout = new javax.swing.GroupLayout(Procurar_Chassi1);
+        Procurar_Chassi1.setLayout(Procurar_Chassi1Layout);
+        Procurar_Chassi1Layout.setHorizontalGroup(
+            Procurar_Chassi1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Procurar_Chassi1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLb_Topo_menuAlterar1, javax.swing.GroupLayout.DEFAULT_SIZE, 881, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(Procurar_Chassi1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Procurar_Chassi1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(Digitar_Chassi_Pan3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        Procurar_Chassi1Layout.setVerticalGroup(
+            Procurar_Chassi1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Procurar_Chassi1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLb_Topo_menuAlterar1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(621, Short.MAX_VALUE))
+            .addGroup(Procurar_Chassi1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Procurar_Chassi1Layout.createSequentialGroup()
+                    .addGap(89, 89, 89)
+                    .addComponent(Digitar_Chassi_Pan3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(85, Short.MAX_VALUE)))
+        );
+
         javax.swing.GroupLayout ExcluirLayout = new javax.swing.GroupLayout(Excluir);
         Excluir.setLayout(ExcluirLayout);
         ExcluirLayout.setHorizontalGroup(
             ExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 905, Short.MAX_VALUE)
+            .addGroup(ExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ExcluirLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Procurar_Chassi1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
         ExcluirLayout.setVerticalGroup(
             ExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 673, Short.MAX_VALUE)
+            .addGroup(ExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ExcluirLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(Procurar_Chassi1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         jLayeredPane2.add(Excluir);
@@ -966,7 +1112,52 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jCB_EscolhasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_EscolhasActionPerformed
-        // TODO add your handling code here:
+        if(!jCB_Escolhas.getSelectedItem().toString().equals("-------------------------------------------------")){
+            String opc = jCB_Escolhas.getSelectedItem().toString();
+            
+            if(opc.equals("1- Inserir")){
+                Inserir.setVisible(true);
+            }
+            
+            /*if(opc.equals("2- Mostrar")){
+                
+            }
+            
+            if(opc.equals("3- Alterar")){
+                
+            }
+            
+            if(opc.equals("4- Excluir")){
+                
+            }
+            
+            if(opc.equals("5- Mostrar o carro com maior potência")){
+                
+            }
+            
+            if(opc.equals("6- Mostrar a média dos anos")){
+                
+            }
+            
+            if(opc.equals("7- Ordenar por modelo")){
+                
+            }
+            
+            if(opc.equals("8- Mostrar quantos carros estão no registro")){
+                
+            }
+            
+            if(opc.equals("9- Carros do “menor ano” agrupados por fabricante")){
+                
+            }
+            
+            if(opc.equals("10- Mostrar carros com ar-condicionado")){
+                
+            }
+            */
+            
+        
+        }
     }//GEN-LAST:event_jCB_EscolhasActionPerformed
 
     private void AC_Nao_RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AC_Nao_RBActionPerformed
@@ -1044,6 +1235,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JRadioButton AC_Sim_RB;
     private javax.swing.JRadioButton AC_Sim_RB2;
     private javax.swing.JPanel Alterar;
+    private javax.swing.JPanel AlterarCarro;
     private javax.swing.JPanel AnoPan;
     private javax.swing.JPanel AnoPan1;
     private javax.swing.JTextField Ano_TF;
@@ -1051,25 +1243,29 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel ButtonsPan;
     private javax.swing.JPanel ButtonsPan1;
     private javax.swing.JPanel ButtonsPan2;
+    private javax.swing.JPanel ButtonsPan3;
     private javax.swing.JPanel ChassiPan;
     private javax.swing.JPanel ChassiPan1;
     private javax.swing.JPanel ChassiPan2;
+    private javax.swing.JPanel ChassiPan3;
     private javax.swing.JTextField Chassi_TF;
     private javax.swing.JTextField Chassi_TF2;
     private javax.swing.JTextField Chassi_TF3;
+    private javax.swing.JTextField Chassi_TF4;
     private javax.swing.JPanel DadosPan;
     private javax.swing.JPanel DadosPan2;
     private javax.swing.JPanel Digitar_Chassi_Pan2;
+    private javax.swing.JPanel Digitar_Chassi_Pan3;
     private javax.swing.JPanel Excluir;
     private javax.swing.JPanel FabricantePan;
     private javax.swing.JPanel FabricantePan1;
     private javax.swing.JTextField Fabricante_TF;
     private javax.swing.JTextField Fabricante_TF2;
     private javax.swing.JPanel Inserir;
-    private javax.swing.JPanel Inserir1;
     private javax.swing.JButton Inserir_BT;
     private javax.swing.JButton Inserir_BT1;
     private javax.swing.JButton Inserir_BT2;
+    private javax.swing.JButton Inserir_BT3;
     private javax.swing.JLabel LB_AC;
     private javax.swing.JLabel LB_AC2;
     private javax.swing.JLabel LB_Ano;
@@ -1077,6 +1273,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel LB_Chassi;
     private javax.swing.JLabel LB_Chassi2;
     private javax.swing.JLabel LB_Chassi3;
+    private javax.swing.JLabel LB_Chassi4;
     private javax.swing.JLabel LB_Fabricante;
     private javax.swing.JLabel LB_Fabricante2;
     private javax.swing.JLabel LB_Modelo;
@@ -1086,6 +1283,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton Limpar_BT;
     private javax.swing.JButton Limpar_BT1;
     private javax.swing.JButton Limpar_BT2;
+    private javax.swing.JButton Limpar_BT3;
     private javax.swing.JPanel Menu_Principal;
     private javax.swing.JPanel ModeloPan;
     private javax.swing.JPanel ModeloPan1;
@@ -1097,6 +1295,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JTextField Potencia_TF;
     private javax.swing.JTextField Potencia_TF1;
     private javax.swing.JPanel Procurar_Chassi;
+    private javax.swing.JPanel Procurar_Chassi1;
     private javax.swing.JTable Resultado_Mostra_Table;
     private javax.swing.JScrollPane Tabela_SP;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -1107,6 +1306,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLb_Escolha_Opcao;
     private javax.swing.JLabel jLb_Topo_menu;
     private javax.swing.JLabel jLb_Topo_menuAlterar;
+    private javax.swing.JLabel jLb_Topo_menuAlterar1;
     private javax.swing.JLabel jLb_Topo_menuAlterar2;
     private javax.swing.JLabel jLb_Topo_menuInserir;
     private javax.swing.JLabel jLb_Topo_menuMostrar;

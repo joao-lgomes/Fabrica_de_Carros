@@ -3,6 +3,7 @@ package Principal;
 import DAO.CarroDAO;
 import Carro.Carro;
 import Conexao.Conexao;
+import Menu.Menu;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -12,7 +13,10 @@ public class Principal {
 
     
     public static void main(String[] args) {
-        Carro carro = new Carro("1234", 2020, "city", "honda", 1200, true);
+        
+        new Menu().setVisible(true);
+        
+        /*Carro carro = new Carro("1234", 2020, "city", "honda", 1200, true);
         CarroDAO carroDAO;
         try{
             carroDAO = new CarroDAO();
@@ -21,7 +25,7 @@ public class Principal {
             System.out.println("Erro: "+e.toString());
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        } */
         
         
         
