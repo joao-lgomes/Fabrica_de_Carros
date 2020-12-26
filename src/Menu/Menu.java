@@ -28,12 +28,17 @@ public class Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        Menu_Principal = new javax.swing.JPanel();
         jLb_Topo_menu = new javax.swing.JLabel();
         jLb_Escolha_Opcao = new javax.swing.JLabel();
         jCB_Escolhas = new javax.swing.JComboBox<>();
         jLayeredPane2 = new javax.swing.JLayeredPane();
         Inserir = new javax.swing.JPanel();
         jLb_Topo_menu1 = new javax.swing.JLabel();
+        DadosPan = new javax.swing.JPanel();
+        ButtonsPan = new javax.swing.JPanel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
         Mostrar = new javax.swing.JPanel();
         Alterar = new javax.swing.JPanel();
         Excluir = new javax.swing.JPanel();
@@ -48,6 +53,8 @@ public class Menu extends javax.swing.JFrame {
         setTitle("Fábrica de Carros");
         setResizable(false);
 
+        Menu_Principal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         jLb_Topo_menu.setFont(new java.awt.Font("Tahoma", 1, 28)); // NOI18N
         jLb_Topo_menu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLb_Topo_menu.setText("MENU DE ESCOLHAS");
@@ -59,6 +66,33 @@ public class Menu extends javax.swing.JFrame {
 
         jCB_Escolhas.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jCB_Escolhas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jCB_Escolhas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCB_EscolhasActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Menu_PrincipalLayout = new javax.swing.GroupLayout(Menu_Principal);
+        Menu_Principal.setLayout(Menu_PrincipalLayout);
+        Menu_PrincipalLayout.setHorizontalGroup(
+            Menu_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLb_Escolha_Opcao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Menu_PrincipalLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jCB_Escolhas, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(216, 216, 216))
+            .addComponent(jLb_Topo_menu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        Menu_PrincipalLayout.setVerticalGroup(
+            Menu_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Menu_PrincipalLayout.createSequentialGroup()
+                .addComponent(jLb_Topo_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jLb_Escolha_Opcao)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCB_Escolhas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 27, Short.MAX_VALUE))
+        );
 
         jLayeredPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLayeredPane2.setLayout(new javax.swing.OverlayLayout(jLayeredPane2));
@@ -68,21 +102,50 @@ public class Menu extends javax.swing.JFrame {
         jLb_Topo_menu1.setText("INSERIR");
         jLb_Topo_menu1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
+        DadosPan.setLayout(new java.awt.GridLayout(3, 2, 50, 0));
+
+        jButton1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton1.setText("LIMPAR");
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        jButton2.setText("INSERIR");
+
+        javax.swing.GroupLayout ButtonsPanLayout = new javax.swing.GroupLayout(ButtonsPan);
+        ButtonsPan.setLayout(ButtonsPanLayout);
+        ButtonsPanLayout.setHorizontalGroup(
+            ButtonsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ButtonsPanLayout.createSequentialGroup()
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        ButtonsPanLayout.setVerticalGroup(
+            ButtonsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonsPanLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(ButtonsPanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton1))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout InserirLayout = new javax.swing.GroupLayout(Inserir);
         Inserir.setLayout(InserirLayout);
         InserirLayout.setHorizontalGroup(
             InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InserirLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLb_Topo_menu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jLb_Topo_menu1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(DadosPan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(ButtonsPan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         InserirLayout.setVerticalGroup(
             InserirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(InserirLayout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addContainerGap()
                 .addComponent(jLb_Topo_menu1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(469, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DadosPan, javax.swing.GroupLayout.PREFERRED_SIZE, 468, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ButtonsPan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         jLayeredPane2.add(Inserir);
@@ -91,11 +154,11 @@ public class Menu extends javax.swing.JFrame {
         Mostrar.setLayout(MostrarLayout);
         MostrarLayout.setHorizontalGroup(
             MostrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 839, Short.MAX_VALUE)
+            .addGap(0, 883, Short.MAX_VALUE)
         );
         MostrarLayout.setVerticalGroup(
             MostrarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 597, Short.MAX_VALUE)
         );
 
         jLayeredPane2.add(Mostrar);
@@ -104,11 +167,11 @@ public class Menu extends javax.swing.JFrame {
         Alterar.setLayout(AlterarLayout);
         AlterarLayout.setHorizontalGroup(
             AlterarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 839, Short.MAX_VALUE)
+            .addGap(0, 883, Short.MAX_VALUE)
         );
         AlterarLayout.setVerticalGroup(
             AlterarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 597, Short.MAX_VALUE)
         );
 
         jLayeredPane2.add(Alterar);
@@ -117,11 +180,11 @@ public class Menu extends javax.swing.JFrame {
         Excluir.setLayout(ExcluirLayout);
         ExcluirLayout.setHorizontalGroup(
             ExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 839, Short.MAX_VALUE)
+            .addGap(0, 883, Short.MAX_VALUE)
         );
         ExcluirLayout.setVerticalGroup(
             ExcluirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 597, Short.MAX_VALUE)
         );
 
         jLayeredPane2.add(Excluir);
@@ -130,11 +193,11 @@ public class Menu extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 839, Short.MAX_VALUE)
+            .addGap(0, 883, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 597, Short.MAX_VALUE)
         );
 
         jLayeredPane2.add(jPanel4);
@@ -143,11 +206,11 @@ public class Menu extends javax.swing.JFrame {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 839, Short.MAX_VALUE)
+            .addGap(0, 883, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 597, Short.MAX_VALUE)
         );
 
         jLayeredPane2.add(jPanel6);
@@ -156,11 +219,11 @@ public class Menu extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 839, Short.MAX_VALUE)
+            .addGap(0, 883, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 597, Short.MAX_VALUE)
         );
 
         jLayeredPane2.add(jPanel7);
@@ -169,11 +232,11 @@ public class Menu extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 839, Short.MAX_VALUE)
+            .addGap(0, 883, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 597, Short.MAX_VALUE)
         );
 
         jLayeredPane2.add(jPanel3);
@@ -182,11 +245,11 @@ public class Menu extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 839, Short.MAX_VALUE)
+            .addGap(0, 883, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 597, Short.MAX_VALUE)
         );
 
         jLayeredPane2.add(jPanel2);
@@ -195,11 +258,11 @@ public class Menu extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 839, Short.MAX_VALUE)
+            .addGap(0, 883, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 545, Short.MAX_VALUE)
+            .addGap(0, 597, Short.MAX_VALUE)
         );
 
         jLayeredPane2.add(jPanel1);
@@ -208,29 +271,13 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLb_Topo_menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLb_Escolha_Opcao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(219, 219, 219)
-                        .addComponent(jCB_Escolhas, javax.swing.GroupLayout.PREFERRED_SIZE, 401, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
             .addComponent(jLayeredPane2)
+            .addComponent(Menu_Principal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLb_Topo_menu, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLb_Escolha_Opcao)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCB_Escolhas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Menu_Principal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLayeredPane2))
         );
@@ -238,6 +285,10 @@ public class Menu extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jCB_EscolhasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_EscolhasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCB_EscolhasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -276,10 +327,15 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Alterar;
+    private javax.swing.JPanel ButtonsPan;
+    private javax.swing.JPanel DadosPan;
     private javax.swing.JPanel Excluir;
     private javax.swing.JPanel Inserir;
+    private javax.swing.JPanel Menu_Principal;
     private javax.swing.JPanel Mostrar;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jCB_Escolhas;
     private javax.swing.JLayeredPane jLayeredPane2;
     private javax.swing.JLabel jLb_Escolha_Opcao;
