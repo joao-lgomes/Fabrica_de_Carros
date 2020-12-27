@@ -1343,7 +1343,8 @@ public class Menu extends javax.swing.JFrame {
                     });
 
                     Resultado_Mostra_Table.setModel(model);
-
+                    
+                    limpar();
                     Mostrar.setVisible(true);
                 } catch (SQLException | ClassNotFoundException ex) {
                     Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
@@ -1389,7 +1390,8 @@ public class Menu extends javax.swing.JFrame {
                     });
 
                     Resultado_Mostra_Table.setModel(model);
-
+                    
+                    limpar();
                     Mostrar.setVisible(true);
                 } catch (SQLException | ClassNotFoundException ex) {
                     Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
@@ -1405,6 +1407,7 @@ public class Menu extends javax.swing.JFrame {
                 CarroDAO CarroDAO = new CarroDAO();
                 Chassi_ResultadoResultado.setText(String.valueOf(CarroDAO.MediaAnos()));
                 
+                limpar();
                 Resultado.setVisible(true);
             }catch (SQLException | ClassNotFoundException ex){
                     Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
@@ -1439,7 +1442,8 @@ public class Menu extends javax.swing.JFrame {
                     });
 
                     Resultado_Mostra_Table.setModel(model);
-
+                    
+                    limpar();
                     Mostrar.setVisible(true);
                 } catch (SQLException | ClassNotFoundException ex) {
                     Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
@@ -1454,6 +1458,7 @@ public class Menu extends javax.swing.JFrame {
                 CarroDAO CarroDAO = new CarroDAO();
                 Chassi_ResultadoResultado.setText(String.valueOf(CarroDAO.lenght()));
                 
+                limpar();
                 Resultado.setVisible(true);
             }catch (SQLException | ClassNotFoundException ex){
                     Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
@@ -1477,7 +1482,8 @@ public class Menu extends javax.swing.JFrame {
                     });
 
                     Resultado_Mostra_Table.setModel(model);
-
+                    
+                    limpar();
                     Mostrar.setVisible(true);
                 } catch (SQLException | ClassNotFoundException ex) {
                     Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
@@ -1512,7 +1518,8 @@ public class Menu extends javax.swing.JFrame {
                     });
 
                     Resultado_Mostra_Table.setModel(model);
-
+                    
+                    limpar();
                     Mostrar.setVisible(true);
                 } catch (SQLException | ClassNotFoundException ex) {
                     Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
