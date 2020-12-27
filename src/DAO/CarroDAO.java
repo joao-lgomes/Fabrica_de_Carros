@@ -53,7 +53,7 @@ public class CarroDAO {
         }
     }
     
-    public void uptade(Carro carro) throws SQLException{
+    public void update(Carro carro) throws SQLException{
         //Criando uma instrução preparada
         PreparedStatement instrucao;
         
@@ -259,12 +259,12 @@ public class CarroDAO {
         return ListaRetorno;
     }
     
-    public ArrayList<Carro> SemAr(){
+    public ArrayList<Carro> ComAr(){
         ArrayList <Carro> ListaRetorno = null;
         PreparedStatement instrucao;
         ResultSet res;
         
-        String codigo = "select * from carro where arCondicionado=false";
+        String codigo = "select * from carro where arCondicionado=true";
         
         try{
             ListaRetorno = new ArrayList();

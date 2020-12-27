@@ -5,6 +5,12 @@
  */
 package Menu;
 
+import Carro.Carro;
+import DAO.CarroDAO;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author herba
@@ -58,6 +64,7 @@ public class Menu extends javax.swing.JFrame {
         jLb_Topo_menu = new javax.swing.JLabel();
         jLb_Escolha_Opcao = new javax.swing.JLabel();
         jCB_Escolhas = new javax.swing.JComboBox<>();
+        JB_acao = new javax.swing.JButton();
         jLayeredPane2 = new javax.swing.JLayeredPane();
         Inserir = new javax.swing.JPanel();
         jLb_Topo_menuInserir = new javax.swing.JLabel();
@@ -164,6 +171,14 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
+        JB_acao.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        JB_acao.setText("CONFIRMAR");
+        JB_acao.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JB_acaoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout Menu_PrincipalLayout = new javax.swing.GroupLayout(Menu_Principal);
         Menu_Principal.setLayout(Menu_PrincipalLayout);
         Menu_PrincipalLayout.setHorizontalGroup(
@@ -171,9 +186,11 @@ public class Menu extends javax.swing.JFrame {
             .addComponent(jLb_Escolha_Opcao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLb_Topo_menu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Menu_PrincipalLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jCB_Escolhas, javax.swing.GroupLayout.PREFERRED_SIZE, 581, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(162, 162, 162))
+                .addGap(43, 43, 43)
+                .addComponent(jCB_Escolhas, javax.swing.GroupLayout.PREFERRED_SIZE, 589, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(JB_acao, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         Menu_PrincipalLayout.setVerticalGroup(
             Menu_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -182,7 +199,9 @@ public class Menu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLb_Escolha_Opcao)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jCB_Escolhas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(Menu_PrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JB_acao)
+                    .addComponent(jCB_Escolhas))
                 .addGap(0, 27, Short.MAX_VALUE))
         );
 
@@ -415,9 +434,19 @@ public class Menu extends javax.swing.JFrame {
 
         Limpar_BT.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Limpar_BT.setText("LIMPAR");
+        Limpar_BT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Limpar_BTActionPerformed(evt);
+            }
+        });
 
         Inserir_BT.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Inserir_BT.setText("INSERIR");
+        Inserir_BT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Inserir_BTActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ButtonsPanLayout = new javax.swing.GroupLayout(ButtonsPan);
         ButtonsPan.setLayout(ButtonsPanLayout);
@@ -535,6 +564,11 @@ public class Menu extends javax.swing.JFrame {
 
         Limpar_BT2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Limpar_BT2.setText("LIMPAR");
+        Limpar_BT2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Limpar_BT2ActionPerformed(evt);
+            }
+        });
 
         Inserir_BT2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Inserir_BT2.setText("PROCURAR");
@@ -1110,54 +1144,24 @@ public class Menu extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private void limpar(){
+        Inserir.setVisible(false);
+        Mostrar.setVisible(false);
+        Alterar.setVisible(false);
+        Excluir.setVisible(false);
+        jPanel1.setVisible(false);
+        jPanel2.setVisible(false);
+        jPanel3.setVisible(false);
+        jPanel4.setVisible(false);
+        jPanel6.setVisible(false);
+        jPanel7.setVisible(false);
+        Procurar_Chassi.setVisible(false);
+        AlterarCarro.setVisible(false);
+    }
+    
     private void jCB_EscolhasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_EscolhasActionPerformed
-        if(!jCB_Escolhas.getSelectedItem().toString().equals("-------------------------------------------------")){
-            String opc = jCB_Escolhas.getSelectedItem().toString();
-            
-            if(opc.equals("1- Inserir")){
-                Inserir.setVisible(true);
-            }
-            
-            /*if(opc.equals("2- Mostrar")){
-                
-            }
-            
-            if(opc.equals("3- Alterar")){
-                
-            }
-            
-            if(opc.equals("4- Excluir")){
-                
-            }
-            
-            if(opc.equals("5- Mostrar o carro com maior potência")){
-                
-            }
-            
-            if(opc.equals("6- Mostrar a média dos anos")){
-                
-            }
-            
-            if(opc.equals("7- Ordenar por modelo")){
-                
-            }
-            
-            if(opc.equals("8- Mostrar quantos carros estão no registro")){
-                
-            }
-            
-            if(opc.equals("9- Carros do “menor ano” agrupados por fabricante")){
-                
-            }
-            
-            if(opc.equals("10- Mostrar carros com ar-condicionado")){
-                
-            }
-            */
-            
         
-        }
     }//GEN-LAST:event_jCB_EscolhasActionPerformed
 
     private void AC_Nao_RBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AC_Nao_RBActionPerformed
@@ -1191,6 +1195,101 @@ public class Menu extends javax.swing.JFrame {
     private void AC_Sim_RB2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AC_Sim_RB2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AC_Sim_RB2ActionPerformed
+
+    private void JB_acaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JB_acaoActionPerformed
+        if(!(jCB_Escolhas.getSelectedItem().toString().equals("-------------------------------------------------"))){
+            String opc = jCB_Escolhas.getSelectedItem().toString();
+            
+            if(opc.equals("1- Inserir")){
+                limpar();
+                Inserir.setVisible(true);
+            }
+            
+            /*if(opc.equals("2- Mostrar")){
+                
+            }*/
+            
+            if(opc.equals("3- Alterar")){
+                limpar();
+                Alterar.setVisible(true);
+                Procurar_Chassi.setVisible(true);
+            }
+            
+            if(opc.equals("4- Excluir")){
+                limpar();
+                Excluir.setVisible(true);
+            }
+            
+            /*if(opc.equals("5- Mostrar o carro com maior potência")){
+                
+            }
+            
+            if(opc.equals("6- Mostrar a média dos anos")){
+                
+            }
+            
+            if(opc.equals("7- Ordenar por modelo")){
+                
+            }
+            
+            if(opc.equals("8- Mostrar quantos carros estão no registro")){
+                
+            }
+            
+            if(opc.equals("9- Carros do “menor ano” agrupados por fabricante")){
+                
+            }
+            
+            if(opc.equals("10- Mostrar carros com ar-condicionado")){
+                
+            }*/
+            
+            
+        
+        }
+    }//GEN-LAST:event_JB_acaoActionPerformed
+
+    private void Inserir_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Inserir_BTActionPerformed
+        // TODO add your handling code here:
+        try{
+            boolean ac = true;
+            if(AC_Sim_RB.isSelected())
+                ac = true;
+            else if(AC_Nao_RB.isSelected())
+                ac = false;
+            CarroDAO CarroDAO = new CarroDAO();
+            Carro carro = new Carro(Chassi_TF.getText(), Integer.parseInt(Ano_TF.getText()), Modelo_TF.getText(), 
+                                    Fabricante_TF.getText(), Float.parseFloat(Potencia_TF.getText()), ac);
+            
+            Chassi_TF.setText("");
+            Ano_TF.setText("");
+            Modelo_TF.setText("");
+            Fabricante_TF.setText("");
+            Potencia_TF.setText("");
+            AC_Nao_RB.setSelected(false);
+            AC_Sim_RB.setSelected(true);
+ 
+        }catch(SQLException | ClassNotFoundException e) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, e);
+        }        
+        
+    }//GEN-LAST:event_Inserir_BTActionPerformed
+
+    private void Limpar_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Limpar_BTActionPerformed
+        // TODO add your handling code here:
+            Chassi_TF.setText("");
+            Ano_TF.setText("");
+            Modelo_TF.setText("");
+            Fabricante_TF.setText("");
+            Potencia_TF.setText("");
+            AC_Nao_RB.setSelected(false);
+            AC_Sim_RB.setSelected(true);
+    }//GEN-LAST:event_Limpar_BTActionPerformed
+
+    private void Limpar_BT2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Limpar_BT2ActionPerformed
+        // TODO add your handling code here:
+        Chassi_TF2.setText("");
+    }//GEN-LAST:event_Limpar_BT2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1266,6 +1365,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton Inserir_BT1;
     private javax.swing.JButton Inserir_BT2;
     private javax.swing.JButton Inserir_BT3;
+    private javax.swing.JButton JB_acao;
     private javax.swing.JLabel LB_AC;
     private javax.swing.JLabel LB_AC2;
     private javax.swing.JLabel LB_Ano;
