@@ -105,7 +105,7 @@ public class Menu extends javax.swing.JFrame {
         Chassi_TF2 = new javax.swing.JTextField();
         ButtonsPan2 = new javax.swing.JPanel();
         Limpar_BT2 = new javax.swing.JButton();
-        Inserir_BT2 = new javax.swing.JButton();
+        Procurar_BT = new javax.swing.JButton();
         AlterarCarro = new javax.swing.JPanel();
         jLb_Topo_menuAlterar2 = new javax.swing.JLabel();
         DadosPan2 = new javax.swing.JPanel();
@@ -570,8 +570,13 @@ public class Menu extends javax.swing.JFrame {
             }
         });
 
-        Inserir_BT2.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Inserir_BT2.setText("PROCURAR");
+        Procurar_BT.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Procurar_BT.setText("PROCURAR");
+        Procurar_BT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Procurar_BTActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ButtonsPan2Layout = new javax.swing.GroupLayout(ButtonsPan2);
         ButtonsPan2.setLayout(ButtonsPan2Layout);
@@ -580,14 +585,14 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(ButtonsPan2Layout.createSequentialGroup()
                 .addComponent(Limpar_BT2, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Inserir_BT2, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(Procurar_BT, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         ButtonsPan2Layout.setVerticalGroup(
             ButtonsPan2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonsPan2Layout.createSequentialGroup()
                 .addContainerGap(24, Short.MAX_VALUE)
                 .addGroup(ButtonsPan2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Inserir_BT2)
+                    .addComponent(Procurar_BT)
                     .addComponent(Limpar_BT2))
                 .addContainerGap())
         );
@@ -1291,6 +1296,11 @@ public class Menu extends javax.swing.JFrame {
         Chassi_TF2.setText("");
     }//GEN-LAST:event_Limpar_BT2ActionPerformed
 
+    private void Procurar_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Procurar_BTActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_Procurar_BTActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -1363,7 +1373,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel Inserir;
     private javax.swing.JButton Inserir_BT;
     private javax.swing.JButton Inserir_BT1;
-    private javax.swing.JButton Inserir_BT2;
     private javax.swing.JButton Inserir_BT3;
     private javax.swing.JButton JB_acao;
     private javax.swing.JLabel LB_AC;
@@ -1394,6 +1403,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel PotenciaPan1;
     private javax.swing.JTextField Potencia_TF;
     private javax.swing.JTextField Potencia_TF1;
+    private javax.swing.JButton Procurar_BT;
     private javax.swing.JPanel Procurar_Chassi;
     private javax.swing.JPanel Procurar_Chassi1;
     private javax.swing.JTable Resultado_Mostra_Table;
