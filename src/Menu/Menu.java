@@ -8,8 +8,11 @@ package Menu;
 import Carro.Carro;
 import DAO.CarroDAO;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -140,7 +143,7 @@ public class Menu extends javax.swing.JFrame {
         Chassi_TF4 = new javax.swing.JTextField();
         ButtonsPan3 = new javax.swing.JPanel();
         Limpar_BT3 = new javax.swing.JButton();
-        Inserir_BT3 = new javax.swing.JButton();
+        Excluir_BT = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -654,6 +657,7 @@ public class Menu extends javax.swing.JFrame {
         LB_Chassi3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         LB_Chassi3.setText("Chassi");
 
+        Chassi_TF3.setEditable(false);
         Chassi_TF3.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
 
         javax.swing.GroupLayout ChassiPan1Layout = new javax.swing.GroupLayout(ChassiPan1);
@@ -870,9 +874,19 @@ public class Menu extends javax.swing.JFrame {
 
         Limpar_BT1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Limpar_BT1.setText("LIMPAR");
+        Limpar_BT1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Limpar_BT1ActionPerformed(evt);
+            }
+        });
 
         Inserir_BT1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Inserir_BT1.setText("ALTERAR DADOS");
+        Inserir_BT1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Inserir_BT1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ButtonsPan1Layout = new javax.swing.GroupLayout(ButtonsPan1);
         ButtonsPan1.setLayout(ButtonsPan1Layout);
@@ -961,9 +975,19 @@ public class Menu extends javax.swing.JFrame {
 
         Limpar_BT3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Limpar_BT3.setText("LIMPAR");
+        Limpar_BT3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Limpar_BT3ActionPerformed(evt);
+            }
+        });
 
-        Inserir_BT3.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
-        Inserir_BT3.setText("EXCLUIR");
+        Excluir_BT.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        Excluir_BT.setText("EXCLUIR");
+        Excluir_BT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Excluir_BTActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout ButtonsPan3Layout = new javax.swing.GroupLayout(ButtonsPan3);
         ButtonsPan3.setLayout(ButtonsPan3Layout);
@@ -972,14 +996,14 @@ public class Menu extends javax.swing.JFrame {
             .addGroup(ButtonsPan3Layout.createSequentialGroup()
                 .addComponent(Limpar_BT3, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(Inserir_BT3, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(Excluir_BT, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         ButtonsPan3Layout.setVerticalGroup(
             ButtonsPan3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ButtonsPan3Layout.createSequentialGroup()
                 .addContainerGap(24, Short.MAX_VALUE)
                 .addGroup(ButtonsPan3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Inserir_BT3)
+                    .addComponent(Excluir_BT)
                     .addComponent(Limpar_BT3))
                 .addContainerGap())
         );
@@ -1210,9 +1234,40 @@ public class Menu extends javax.swing.JFrame {
                 Inserir.setVisible(true);
             }
             
-            /*if(opc.equals("2- Mostrar")){
-                
-            }*/
+            if(opc.equals("2- Mostrar")){
+                CarroDAO carroDAO;
+                try {
+                    carroDAO = new CarroDAO();
+
+                    ArrayList<Carro> carros = carroDAO.getAll(false);
+
+                    DefaultTableModel model;
+                    model = new DefaultTableModel(new String[] {"Chassi", "Ano", "Fabricante", "Modelo", "Ar Condicionado", "Potência"}, 0);
+
+                    carros.forEach((Carro carro) -> {
+                        String chassi = carro.getChassi();
+                        int ano = carro.getAno();
+                        String fabricante = carro.getFabricante();
+                        String modelo = carro.getModelo();
+                        boolean ar = carro.isArCondicionado();
+                        float potencia = carro.getPotencia();
+                        Vector row = new Vector();
+                        row.add(chassi);
+                        row.add(ano);
+                        row.add(fabricante);
+                        row.add(modelo);
+                        row.add(ar);
+                        row.add(potencia);
+                        model.addRow(row);
+                    });
+
+                    Resultado_Mostra_Table.setModel(model);
+
+                    Mostrar.setVisible(true);
+                } catch (SQLException | ClassNotFoundException ex) {
+                    Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
             
             if(opc.equals("3- Alterar")){
                 limpar();
@@ -1298,8 +1353,97 @@ public class Menu extends javax.swing.JFrame {
 
     private void Procurar_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Procurar_BTActionPerformed
         // TODO add your handling code here:
-        
+        try{
+            CarroDAO CarroDAO = new CarroDAO();
+            ArrayList <Carro> lista = CarroDAO.getOne(Chassi_TF2.getText());
+            
+            if(!(lista.isEmpty())){
+                
+                Carro carro = lista.get(0);
+                Chassi_TF2.setText("");
+                Procurar_Chassi.setVisible(false);
+                AlterarCarro.setVisible(true);
+                
+                Chassi_TF3.setText(carro.getChassi());
+                Ano_TF2.setText(String.valueOf(carro.getAno()));
+                Modelo_TF2.setText(carro.getModelo());
+                Fabricante_TF2.setText(carro.getFabricante());        
+                Potencia_TF1.setText(String.valueOf(carro.getPotencia()));        
+                
+                if(carro.isArCondicionado()){
+                    AC_Sim_RB2.setSelected(true);
+                    AC_Nao_RB2.setSelected(false);
+                }else{
+                    AC_Sim_RB2.setSelected(false);
+                    AC_Nao_RB2.setSelected(true);
+                }
+            }else
+                Logger.getLogger(Menu.class.getName()).info("O Chassi digitado não existe!!");
+            
+        }catch(SQLException | ClassNotFoundException e){
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, e);
+        }
     }//GEN-LAST:event_Procurar_BTActionPerformed
+
+    private void Limpar_BT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Limpar_BT1ActionPerformed
+        // TODO add your handling code here:
+            Ano_TF2.setText("");
+            Modelo_TF2.setText("");
+            Fabricante_TF2.setText("");
+            Potencia_TF1.setText("");
+            AC_Nao_RB2.setSelected(false);
+            AC_Sim_RB2.setSelected(true);
+    }//GEN-LAST:event_Limpar_BT1ActionPerformed
+
+    private void Inserir_BT1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Inserir_BT1ActionPerformed
+        // TODO add your handling code here:
+        
+        
+        try{
+            CarroDAO CarroDAO = new CarroDAO();
+            boolean AC = true;
+            if(AC_Nao_RB2.isSelected())
+                AC = false;
+            else if(AC_Sim_RB2.isSelected())
+                AC = true;
+
+            Carro carro = new Carro(Chassi_TF3.getText(), Integer.parseInt(Ano_TF2.getText()), Modelo_TF2.getText(), 
+                                    Fabricante_TF2.getText(), Float.parseFloat(Potencia_TF1.getText()), AC);
+            CarroDAO.update(carro);
+        
+            Procurar_Chassi.setVisible(true);
+            AlterarCarro.setVisible(false);
+        }catch(SQLException | ClassNotFoundException e){
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, e);
+        }
+        
+        Chassi_TF3.setText("");
+        Ano_TF2.setText("");
+        Modelo_TF2.setText("");
+        Fabricante_TF2.setText("");
+        Potencia_TF1.setText("");
+        AC_Nao_RB2.setSelected(false);
+        AC_Sim_RB2.setSelected(true);
+
+    }//GEN-LAST:event_Inserir_BT1ActionPerformed
+
+    private void Excluir_BTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Excluir_BTActionPerformed
+        // TODO add your handling code here:
+        try{
+            CarroDAO CarroDAO = new CarroDAO();
+            
+            CarroDAO.delete(Chassi_TF4.getText());
+            
+            Chassi_TF4.setText("");
+        }catch(SQLException | ClassNotFoundException e){
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, e);
+        }
+    }//GEN-LAST:event_Excluir_BTActionPerformed
+
+    private void Limpar_BT3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Limpar_BT3ActionPerformed
+        // TODO add your handling code here:
+        Chassi_TF4.setText("");
+    }//GEN-LAST:event_Limpar_BT3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1366,6 +1510,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel Digitar_Chassi_Pan2;
     private javax.swing.JPanel Digitar_Chassi_Pan3;
     private javax.swing.JPanel Excluir;
+    private javax.swing.JButton Excluir_BT;
     private javax.swing.JPanel FabricantePan;
     private javax.swing.JPanel FabricantePan1;
     private javax.swing.JTextField Fabricante_TF;
@@ -1373,7 +1518,6 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel Inserir;
     private javax.swing.JButton Inserir_BT;
     private javax.swing.JButton Inserir_BT1;
-    private javax.swing.JButton Inserir_BT3;
     private javax.swing.JButton JB_acao;
     private javax.swing.JLabel LB_AC;
     private javax.swing.JLabel LB_AC2;
