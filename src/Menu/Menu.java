@@ -34,6 +34,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel4.setVisible(false);
         jPanel6.setVisible(false);
         jPanel7.setVisible(false);
+        Resultado.setVisible(false);
         
         jCB_Escolhas.removeAllItems();
         jCB_Escolhas.addItem("-------------------------------------------------");
@@ -144,6 +145,12 @@ public class Menu extends javax.swing.JFrame {
         ButtonsPan3 = new javax.swing.JPanel();
         Limpar_BT3 = new javax.swing.JButton();
         Excluir_BT = new javax.swing.JButton();
+        Resultado = new javax.swing.JPanel();
+        jLb_Topo_menuResultado = new javax.swing.JLabel();
+        Digitar_Chassi_Pan4 = new javax.swing.JPanel();
+        ChassiPan4 = new javax.swing.JPanel();
+        LB_TextoResultado = new javax.swing.JLabel();
+        Chassi_ResultadoResultado = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
@@ -1077,6 +1084,79 @@ public class Menu extends javax.swing.JFrame {
 
         jLayeredPane2.add(Excluir);
 
+        jLb_Topo_menuResultado.setFont(new java.awt.Font("Tahoma", 1, 28)); // NOI18N
+        jLb_Topo_menuResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLb_Topo_menuResultado.setText("RESULTADO");
+        jLb_Topo_menuResultado.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        LB_TextoResultado.setFont(new java.awt.Font("Tahoma", 0, 28)); // NOI18N
+        LB_TextoResultado.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        LB_TextoResultado.setText("Digite o Chassi que deseja alterar");
+
+        Chassi_ResultadoResultado.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+
+        javax.swing.GroupLayout ChassiPan4Layout = new javax.swing.GroupLayout(ChassiPan4);
+        ChassiPan4.setLayout(ChassiPan4Layout);
+        ChassiPan4Layout.setHorizontalGroup(
+            ChassiPan4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(LB_TextoResultado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(ChassiPan4Layout.createSequentialGroup()
+                .addGap(69, 69, 69)
+                .addComponent(Chassi_ResultadoResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 743, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(69, Short.MAX_VALUE))
+        );
+        ChassiPan4Layout.setVerticalGroup(
+            ChassiPan4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ChassiPan4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LB_TextoResultado)
+                .addGap(18, 18, 18)
+                .addComponent(Chassi_ResultadoResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout Digitar_Chassi_Pan4Layout = new javax.swing.GroupLayout(Digitar_Chassi_Pan4);
+        Digitar_Chassi_Pan4.setLayout(Digitar_Chassi_Pan4Layout);
+        Digitar_Chassi_Pan4Layout.setHorizontalGroup(
+            Digitar_Chassi_Pan4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ChassiPan4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        Digitar_Chassi_Pan4Layout.setVerticalGroup(
+            Digitar_Chassi_Pan4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Digitar_Chassi_Pan4Layout.createSequentialGroup()
+                .addComponent(ChassiPan4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 343, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout ResultadoLayout = new javax.swing.GroupLayout(Resultado);
+        Resultado.setLayout(ResultadoLayout);
+        ResultadoLayout.setHorizontalGroup(
+            ResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ResultadoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLb_Topo_menuResultado, javax.swing.GroupLayout.DEFAULT_SIZE, 881, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(ResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ResultadoLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(Digitar_Chassi_Pan4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        ResultadoLayout.setVerticalGroup(
+            ResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ResultadoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLb_Topo_menuResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(621, Short.MAX_VALUE))
+            .addGroup(ResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ResultadoLayout.createSequentialGroup()
+                    .addGap(89, 89, 89)
+                    .addComponent(Digitar_Chassi_Pan4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(85, Short.MAX_VALUE)))
+        );
+
+        jLayeredPane2.add(Resultado);
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -1187,6 +1267,7 @@ public class Menu extends javax.swing.JFrame {
         jPanel7.setVisible(false);
         Procurar_Chassi.setVisible(false);
         AlterarCarro.setVisible(false);
+        Resultado.setVisible(false);
     }
     
     private void jCB_EscolhasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCB_EscolhasActionPerformed
@@ -1280,29 +1361,163 @@ public class Menu extends javax.swing.JFrame {
                 Excluir.setVisible(true);
             }
             
-            /*if(opc.equals("5- Mostrar o carro com maior potência")){
-                
+            if(opc.equals("5- Mostrar o carro com maior potência")){
+                CarroDAO carroDAO;
+                try {
+                    carroDAO = new CarroDAO();
+
+                    ArrayList<Carro> carros = carroDAO.maiorPotencia();
+
+                    DefaultTableModel model;
+                    model = new DefaultTableModel(new String[] {"Chassi", "Ano", "Fabricante", "Modelo", "Ar Condicionado", "Potência"}, 0);
+
+                    carros.forEach((Carro carro) -> {
+                        String chassi = carro.getChassi();
+                        int ano = carro.getAno();
+                        String fabricante = carro.getFabricante();
+                        String modelo = carro.getModelo();
+                        boolean ar = carro.isArCondicionado();
+                        float potencia = carro.getPotencia();
+                        Vector row = new Vector();
+                        row.add(chassi);
+                        row.add(ano);
+                        row.add(fabricante);
+                        row.add(modelo);
+                        row.add(ar);
+                        row.add(potencia);
+                        model.addRow(row);
+                    });
+
+                    Resultado_Mostra_Table.setModel(model);
+
+                    Mostrar.setVisible(true);
+                } catch (SQLException | ClassNotFoundException ex) {
+                    Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             
             if(opc.equals("6- Mostrar a média dos anos")){
                 
+            try{    
+                jLb_Topo_menuResultado.setText("MÉDIA DOS ANOS");
+                LB_TextoResultado.setText("A média dos anos dos carros é: ");
+                
+                CarroDAO CarroDAO = new CarroDAO();
+                Chassi_ResultadoResultado.setText(String.valueOf(CarroDAO.MediaAnos()));
+                
+                Resultado.setVisible(true);
+            }catch (SQLException | ClassNotFoundException ex){
+                    Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             
             if(opc.equals("7- Ordenar por modelo")){
-                
+                CarroDAO carroDAO;
+                try {
+                    carroDAO = new CarroDAO();
+
+                    ArrayList<Carro> carros = carroDAO.getAll(true);
+
+                    DefaultTableModel model;
+                    model = new DefaultTableModel(new String[] {"Chassi", "Ano", "Fabricante", "Modelo", "Ar Condicionado", "Potência"}, 0);
+
+                    carros.forEach((Carro carro) -> {
+                        String chassi = carro.getChassi();
+                        int ano = carro.getAno();
+                        String fabricante = carro.getFabricante();
+                        String modelo = carro.getModelo();
+                        boolean ar = carro.isArCondicionado();
+                        float potencia = carro.getPotencia();
+                        Vector row = new Vector();
+                        row.add(chassi);
+                        row.add(ano);
+                        row.add(fabricante);
+                        row.add(modelo);
+                        row.add(ar);
+                        row.add(potencia);
+                        model.addRow(row);
+                    });
+
+                    Resultado_Mostra_Table.setModel(model);
+
+                    Mostrar.setVisible(true);
+                } catch (SQLException | ClassNotFoundException ex) {
+                    Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             
             if(opc.equals("8- Mostrar quantos carros estão no registro")){
+                try{    
+                jLb_Topo_menuResultado.setText("QUANTIDADE DE CARROS");
+                LB_TextoResultado.setText("A QUANTIDADE DE CARROS NO REGISTRO É DE:");
                 
+                CarroDAO CarroDAO = new CarroDAO();
+                Chassi_ResultadoResultado.setText(String.valueOf(CarroDAO.lenght()));
+                
+                Resultado.setVisible(true);
+            }catch (SQLException | ClassNotFoundException ex){
+                    Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             
             if(opc.equals("9- Carros do “menor ano” agrupados por fabricante")){
-                
+                CarroDAO carroDAO;
+                try {
+                    carroDAO = new CarroDAO();
+
+                    ArrayList<String> fabricantes = carroDAO.menorAno();
+
+                    DefaultTableModel model;
+                    model = new DefaultTableModel(new String[] {"Fabricante"}, 0);
+
+                    fabricantes.forEach((String fabricante) -> {
+                        Vector row = new Vector();
+                        row.add(fabricante);
+                        model.addRow(row);
+                    });
+
+                    Resultado_Mostra_Table.setModel(model);
+
+                    Mostrar.setVisible(true);
+                } catch (SQLException | ClassNotFoundException ex) {
+                    Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
             
             if(opc.equals("10- Mostrar carros com ar-condicionado")){
-                
-            }*/
+                CarroDAO carroDAO;
+                try {
+                    carroDAO = new CarroDAO();
+
+                    ArrayList<Carro> carros = carroDAO.ComAr();
+
+                    DefaultTableModel model;
+                    model = new DefaultTableModel(new String[] {"Chassi", "Ano", "Fabricante", "Modelo", "Ar Condicionado", "Potência"}, 0);
+
+                    carros.forEach((Carro carro) -> {
+                        String chassi = carro.getChassi();
+                        int ano = carro.getAno();
+                        String fabricante = carro.getFabricante();
+                        String modelo = carro.getModelo();
+                        boolean ar = carro.isArCondicionado();
+                        float potencia = carro.getPotencia();
+                        Vector row = new Vector();
+                        row.add(chassi);
+                        row.add(ano);
+                        row.add(fabricante);
+                        row.add(modelo);
+                        row.add(ar);
+                        row.add(potencia);
+                        model.addRow(row);
+                    });
+
+                    Resultado_Mostra_Table.setModel(model);
+
+                    Mostrar.setVisible(true);
+                } catch (SQLException | ClassNotFoundException ex) {
+                    Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
             
             
         
@@ -1501,6 +1716,8 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel ChassiPan1;
     private javax.swing.JPanel ChassiPan2;
     private javax.swing.JPanel ChassiPan3;
+    private javax.swing.JPanel ChassiPan4;
+    private javax.swing.JTextField Chassi_ResultadoResultado;
     private javax.swing.JTextField Chassi_TF;
     private javax.swing.JTextField Chassi_TF2;
     private javax.swing.JTextField Chassi_TF3;
@@ -1509,6 +1726,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JPanel DadosPan2;
     private javax.swing.JPanel Digitar_Chassi_Pan2;
     private javax.swing.JPanel Digitar_Chassi_Pan3;
+    private javax.swing.JPanel Digitar_Chassi_Pan4;
     private javax.swing.JPanel Excluir;
     private javax.swing.JButton Excluir_BT;
     private javax.swing.JPanel FabricantePan;
@@ -1533,6 +1751,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel LB_Modelo2;
     private javax.swing.JLabel LB_Potencia;
     private javax.swing.JLabel LB_Potencia1;
+    private javax.swing.JLabel LB_TextoResultado;
     private javax.swing.JButton Limpar_BT;
     private javax.swing.JButton Limpar_BT1;
     private javax.swing.JButton Limpar_BT2;
@@ -1550,6 +1769,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JButton Procurar_BT;
     private javax.swing.JPanel Procurar_Chassi;
     private javax.swing.JPanel Procurar_Chassi1;
+    private javax.swing.JPanel Resultado;
     private javax.swing.JTable Resultado_Mostra_Table;
     private javax.swing.JScrollPane Tabela_SP;
     private javax.swing.ButtonGroup buttonGroup1;
@@ -1564,6 +1784,7 @@ public class Menu extends javax.swing.JFrame {
     private javax.swing.JLabel jLb_Topo_menuAlterar2;
     private javax.swing.JLabel jLb_Topo_menuInserir;
     private javax.swing.JLabel jLb_Topo_menuMostrar;
+    private javax.swing.JLabel jLb_Topo_menuResultado;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
