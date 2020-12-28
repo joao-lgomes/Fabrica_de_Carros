@@ -1543,6 +1543,8 @@ public class Menu extends javax.swing.JFrame {
             Carro carro = new Carro(Chassi_TF.getText(), Integer.parseInt(Ano_TF.getText()), Modelo_TF.getText(), 
                                     Fabricante_TF.getText(), Float.parseFloat(Potencia_TF.getText()), ac);
             
+            CarroDAO.inserir(carro);
+            
             Chassi_TF.setText("");
             Ano_TF.setText("");
             Modelo_TF.setText("");

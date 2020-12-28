@@ -92,9 +92,9 @@ public class CarroDAO {
         ResultSet res;
         ArrayList <Carro> ListaRetorno = new ArrayList();
         
-        String codigo = "select * from carro;";
+        String codigo = "select * from carro";
         if(ordernar)
-            codigo = codigo+"order by (modelo)";
+            codigo = codigo+" order by (modelo)";
         try{
             instrucao = this.conexao.prepareStatement(codigo);
             res = instrucao.executeQuery();
@@ -175,7 +175,7 @@ public class CarroDAO {
         PreparedStatement instrucao;
         ResultSet res;
         
-        String codigo = "SELECT * FROM carros WHERE potencia in (select MAX(potencia) FROM carros)";
+        String codigo = "SELECT * FROM carro WHERE potencia in (select MAX(potencia) FROM carro)";
         
         try{
             ListaRetorno = new ArrayList();
@@ -199,7 +199,7 @@ public class CarroDAO {
     public float MediaAnos(){
         PreparedStatement instrucao;
         ResultSet res;
-        String codigo = "select avg(ano) from carros";
+        String codigo = "select avg(ano) from carro";
         
         float media = 0;
         try{
